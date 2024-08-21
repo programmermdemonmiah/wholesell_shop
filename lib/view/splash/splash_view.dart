@@ -20,7 +20,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
 
-    // _navigateToHomePage();
+    _navigateToMainPage();
   }
 
   @override
@@ -28,7 +28,7 @@ class _SplashViewState extends State<SplashView> {
     super.dispose();
   }
 
-  void _navigateToHomePage() {
+  void _navigateToMainPage() {
     Future.delayed(const Duration(seconds: 2), () {
       // Navigator.pushReplacement(
       //   context,
@@ -36,7 +36,7 @@ class _SplashViewState extends State<SplashView> {
       // );
       Navigator.pushNamedAndRemoveUntil(
         context,
-        AppRoutesName.homeView,
+        AppRoutesName.mainView,
         (route) => false,
       );
       // Get.offAllNamed(AppRoutesName.homeView);
@@ -110,7 +110,7 @@ class _SplashViewState extends State<SplashView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              gapH(2),
+              gapH(4),
               Center(
                 child: Image.asset(
                   AssetsImage.logo,
@@ -146,7 +146,7 @@ class _SplashViewState extends State<SplashView> {
                   ),
                   gapH(5),
                   Text(
-                    'powered by N. I. Biz Soft',
+                    'A Concern of NIBIZ SOFT',
                     style: AppTextStyle.paragraph3(context: context),
                   ),
                   gapH(5)
