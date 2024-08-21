@@ -25,7 +25,7 @@ class HomeCategories extends StatelessWidget {
             maxCrossAxisExtent: 130.sp,
             mainAxisSpacing: 10.sp,
             crossAxisSpacing: 10.sp,
-            mainAxisExtent: 120.sp
+            mainAxisExtent: 130.sp
             // mainAxisExtent: 1 / 1,
             // childAspectRatio: 4 / 5,
             ),

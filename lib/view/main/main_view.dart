@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:wholesell_shop/res/app_text_style/app_text_style.dart';
 import 'package:wholesell_shop/res/assets_manager/assets_image.dart';
 import 'package:wholesell_shop/res/color_manager/app_colors.dart';
+import 'package:wholesell_shop/res/getx_localization/string_text.dart';
 import 'package:wholesell_shop/utils/app_constant.dart';
 import 'package:wholesell_shop/utils/ui_const.dart';
 import 'package:wholesell_shop/view_model/controller/main/main_controller.dart';
@@ -88,7 +89,7 @@ class MainView extends StatelessWidget {
                                   ),
                                   gapH(1.5),
                                   Text(
-                                    "Home",
+                                    S.home,
                                     style: AppTextStyle.tittleSmall2(
                                       context: context,
                                       color:
@@ -120,7 +121,7 @@ class MainView extends StatelessWidget {
                                   ),
                                   gapH(1.5),
                                   Text(
-                                    "Favourite",
+                                    S.favourite,
                                     style: AppTextStyle.tittleSmall2(
                                       context: context,
                                       color:
@@ -160,7 +161,7 @@ class MainView extends StatelessWidget {
                                   ),
                                   gapH(1.5),
                                   Text(
-                                    "Orders",
+                                    S.orders,
                                     style: AppTextStyle.tittleSmall2(
                                       context: context,
                                       color:
@@ -192,7 +193,7 @@ class MainView extends StatelessWidget {
                                   ),
                                   gapH(1.5),
                                   Text(
-                                    "Menu",
+                                    S.menu,
                                     style: AppTextStyle.tittleSmall2(
                                       context: context,
                                       color:

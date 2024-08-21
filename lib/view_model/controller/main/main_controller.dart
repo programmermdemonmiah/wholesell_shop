@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wholesell_shop/view/home/home_view.dart';
+import 'package:wholesell_shop/view/menu/menu_view.dart';
 
 class MainController extends GetxController {
   RxInt selectedIndex =
@@ -10,6 +11,6 @@ class MainController extends GetxController {
     HomeView(),
     HomeView(),
     HomeView(),
-    HomeView(),
+    MenuView(),
   ];
 }
