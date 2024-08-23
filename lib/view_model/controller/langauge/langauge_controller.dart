@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wholesell_shop/view_model/controller/common/prefs_controller.dart';
 
 class LanguageController extends GetxController {
   @override
@@ -11,7 +14,7 @@ class LanguageController extends GetxController {
 
   RxString langauesCode = ''.obs;
 
-  RxList<Map<String, String>> langauges = [
+  RxList langauges = [
     {'code': 'en', 'countryCode': 'US', 'name': 'English'},
     {'code': 'bn', 'countryCode': 'BD', 'name': 'বাংলা'}
   ].obs;
@@ -20,5 +23,10 @@ class LanguageController extends GetxController {
     Locale locale = Locale(code, countryCode);
     Get.updateLocale(locale);
     langauesCode.value = code;
+
+    PrefsController.setLanguage = jsonEncode({
+      "code": code,
+      "countryCode": countryCode,
+    });
   }
 }

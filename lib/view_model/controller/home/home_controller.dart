@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:wholesell_shop/res/getx_localization/string_text.dart';
 
 class HomeController extends GetxController {
   @override
@@ -12,30 +12,32 @@ class HomeController extends GetxController {
     update();
 
     startAutoSlide();
-    Future.delayed(
-      Duration(seconds: 5),
-      () => setLoading = false,
-    );
-    scrollController.addListener(() {
-      if (scrollController.offset > 0 && !isScrolled.value) {
-        isScrolled.value = true;
-      } else if (scrollController.offset <= 0 && isScrolled.value) {
-        isScrolled.value = false;
-      }
-    });
+    // Future.delayed(
+    //   const Duration(seconds: 5),
+    //   () => setLoading = false,
+    // );
+    // scrollController.addListener(() {
+    //   if (scrollController.offset > 0 && !isScrolled.value) {
+    //     isScrolled.value = true;
+    //   } else if (scrollController.offset <= 0 && isScrolled.value) {
+    //     isScrolled.value = false;
+    //   }
+    // });
   }
 
   @override
   void onClose() {
-    scrollController.dispose();
+    // scrollController.dispose();
     pageController.dispose();
     _autoSlideTimer.cancel();
     super.onClose();
   }
 //===================oninit on close end=========================separate ========================
 
-  ScrollController scrollController = ScrollController();
-  var isScrolled = false.obs;
+  RxString homeName = ''.obs;
+
+  // ScrollController scrollController = ScrollController();
+  // var isScrolled = false.obs;
   PageController pageController = PageController();
   late Timer _autoSlideTimer;
   final RxInt slidePageIndex = 0.obs;
@@ -66,6 +68,43 @@ class HomeController extends GetxController {
     },
   ].obs;
 
+  RxList cetegoriesList = [
+    {
+      'image':
+          'https://foodsafetyhelpline.com/wp-content/uploads/2020/11/quinoa-mushrooms-lettuce-red-cabbage-spinach-cucumbers-tomatoes-bowl-buddha-dark-top-view.jpg',
+      'name': S.food,
+    },
+    {
+      'image':
+          'https://browntape.com/wp-content/uploads/2016/06/Online-shopping-grocery.jpg',
+      'name': S.grocery,
+    },
+    {
+      'image':
+          'https://sevsafe.co.uk/wp-content/uploads/2021/04/MediKit-Workplace-BSI-Small-First-Aid-Kit-Image.jpeg',
+      'name': S.pharmacy,
+    },
+    {
+      'image':
+          'https://img.freepik.com/free-vector/isometric-postal-parcels-mails_33099-720.jpg',
+      'name': S.parcel,
+    },
+    {
+      'image':
+          'https://img.freepik.com/free-vector/bakery-promo-poster_1284-10798.jpg',
+      'name': S.bakeryandSweets,
+    },
+    {
+      'image':
+          'https://st.depositphotos.com/2000799/3146/i/450/depositphotos_31463991-stock-photo-shopping-mall.jpg',
+      'name': S.shoppingMall,
+    },
+    {
+      'image':
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmZxfwY_QFcuXAsQmWmwRjL9M30NkpOsN--g&s',
+      'name': S.tongDokan,
+    },
+  ].obs;
   void startAutoSlide() {
     _autoSlideTimer = Timer.periodic(const Duration(seconds: 8), (Timer timer) {
       if (slidePageIndex.value < pageSliderList.length - 1) {

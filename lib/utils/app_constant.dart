@@ -1,3 +1,3 @@
 class AppConstant {
-  static const String manrope = 'Arial';
+  // static const String manrope = 'Arial';
 }

@@ -1,12 +1,12 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:wholesell_shop/res/app_routes/app_routes_name.dart';
 import 'package:wholesell_shop/res/app_text_style/app_text_style.dart';
 import 'package:wholesell_shop/res/assets_manager/assets_image.dart';
 import 'package:wholesell_shop/res/color_manager/app_colors.dart';
 import 'package:wholesell_shop/res/getx_localization/string_text.dart';
-import 'package:wholesell_shop/utils/app_constant.dart';
 import 'package:wholesell_shop/utils/ui_const.dart';
 import 'package:wholesell_shop/view_model/controller/main/main_controller.dart';
 
@@ -15,25 +15,33 @@ class MainView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<MainController>(builder: (controller) {
-      return Scaffold(
-        body: SafeArea(
-          child: Stack(
-            children: [
-              Obx(() => controller.screenList[controller.selectedIndex.value]),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: AppColors.primaryColor,
+        statusBarBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.light,
+      ),
+      child: GetBuilder<MainController>(builder: (controller) {
+        return Scaffold(
+          body: SafeArea(
+            child: Stack(
+              children: [
+                Obx(() =>
+                    controller.screenList[controller.selectedIndex.value]),
 
-              //custom Navigation bar=========
-              Positioned(
-                  // alignment: Alignment.bottomCenter,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  child: _customNavigationBar(controller, context)),
-            ],
+                //custom Navigation bar=========
+                Positioned(
+                    // alignment: Alignment.bottomCenter,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    child: _customNavigationBar(controller, context)),
+              ],
+            ),
           ),
-        ),
-      );
-    });
+        );
+      }),
+    );
   }
 
   Widget _customNavigationBar(
@@ -224,8 +232,9 @@ class MainView extends StatelessWidget {
                   //   duration: Duration(milliseconds: 800),
                   //   SearchScreen(),
                   // );
+                  Get.toNamed(AppRoutesName.cartView);
                 },
-                child: Container(
+                child: SizedBox(
                   height: 100.sp,
                   // width: 60.sp,
                   // decoration: BoxDecoration(

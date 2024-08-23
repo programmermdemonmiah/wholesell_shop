@@ -13,7 +13,7 @@ class AppTextStyle {
     return TextStyle(
       color: color ?? Colors.black,
       fontFamily: 'Arial',
-      fontSize: 18.5.sp,
+      fontSize: 17.5.sp,
       fontWeight: FontWeight.w600,
     );
   }
@@ -29,7 +29,7 @@ class AppTextStyle {
       fontFamily: 'Arial',
       decoration: decoration ?? TextDecoration.none,
       decorationThickness: decorationThickness,
-      fontSize: 17.5.sp,
+      fontSize: 16.5.sp,
       fontWeight: FontWeight.w600,
     );
   }
@@ -38,7 +38,7 @@ class AppTextStyle {
     return TextStyle(
       color: color ?? Colors.black,
       fontFamily: 'Arial',
-      fontSize: 16.5.sp,
+      fontSize: 15.5.sp,
       fontWeight: FontWeight.w600,
     );
   }
@@ -54,7 +54,7 @@ class AppTextStyle {
       fontFamily: 'Arial',
       decoration: decoration ?? TextDecoration.none,
       decorationThickness: decorationThickness,
-      fontSize: 15.5.sp,
+      fontSize: 14.5.sp,
       fontWeight: FontWeight.w600,
     );
   }
@@ -156,7 +156,7 @@ class AppTextStyle {
     return TextStyle(
       color: color ?? Colors.black,
       fontFamily: 'Arial',
-      fontSize: 15.5.sp,
+      fontSize: 14.5.sp,
       fontWeight: fontWeight ?? FontWeight.w500,
     );
   }
@@ -165,7 +165,7 @@ class AppTextStyle {
     return TextStyle(
       color: color ?? Colors.black,
       fontFamily: 'Arial',
-      fontSize: 14.5.sp,
+      fontSize: 13.5.sp,
       fontWeight: fontWeight ?? FontWeight.w500,
     );
   }
@@ -174,7 +174,7 @@ class AppTextStyle {
     return TextStyle(
       color: color ?? Colors.black,
       fontFamily: 'Arial',
-      fontSize: 13.5.sp,
+      fontSize: 12.5.sp,
       fontWeight: FontWeight.w500,
     );
   }
@@ -182,7 +182,7 @@ class AppTextStyle {
   static TextStyle text4({Color? color, fontWeight, required context}) {
     return TextStyle(
       color: color ?? Colors.black,
-      fontSize: 12.5.sp,
+      fontSize: 11.5.sp,
       fontFamily: 'Arial',
       fontWeight: FontWeight.w500,
     );

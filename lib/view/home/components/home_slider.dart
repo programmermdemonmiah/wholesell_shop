@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:wholesell_shop/res/color_manager/app_colors.dart';
+import 'package:wholesell_shop/res/widgets/image_load.dart';
 import 'package:wholesell_shop/utils/ui_const.dart';
 import 'package:wholesell_shop/view_model/controller/home/home_controller.dart';
 
@@ -29,14 +30,24 @@ class HomeSlider extends StatelessWidget {
                     final data = controller.pageSliderList[i];
                     return Padding(
                       padding: edgeInsetsOnly(4, 4, 6, 2),
-                      child: Container(
-                        height: 200.sp,
-                        width: Get.width - 70.w,
-                        decoration: BoxDecoration(
-                            borderRadius: radiusAll(3),
-                            image: DecorationImage(
-                                image: NetworkImage(data["image"]),
-                                fit: BoxFit.cover)),
+                      child:
+                          //  Container(
+                          //   height: 200.sp,
+                          //   width: Get.width - 70.w,
+                          //   decoration: BoxDecoration(
+                          //       borderRadius: radiusAll(3),
+                          //       image: DecorationImage(
+                          //           image: NetworkImage(data["image"]),
+                          //           fit: BoxFit.cover)),
+                          // ),
+                          ClipRRect(
+                        borderRadius: radiusAll(3),
+                        child: ImageLoad(
+                          imageUrl: data['image'],
+                          height: 200.sp,
+                          width: Get.width - 70.w,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     );
                   },
