@@ -32,7 +32,7 @@ class ImageLoad extends StatelessWidget {
             color: Colors.grey[200],
             child: Icon(
               Icons.image,
-              size: width * 0.5,
+              size: width * 0.7,
               color: Colors.grey[400],
             ),
           );
@@ -46,7 +46,7 @@ class ImageLoad extends StatelessWidget {
           color: Colors.grey[200],
           child: Icon(
             Icons.image,
-            size: width * 0.5,
+            size: width * 0.8,
             color: Colors.red,
           ),
         );

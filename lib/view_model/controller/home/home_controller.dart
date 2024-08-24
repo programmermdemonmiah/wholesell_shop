@@ -11,7 +11,11 @@ class HomeController extends GetxController {
     setLoading = true;
     update();
 
-    startAutoSlide();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      startAutoSlide();
+    });
+
+    // startAutoSlide();
     // Future.delayed(
     //   const Duration(seconds: 5),
     //   () => setLoading = false,
@@ -112,11 +116,13 @@ class HomeController extends GetxController {
       } else {
         slidePageIndex.value = 0;
       }
-      pageController.animateToPage(
-        slidePageIndex.value,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
+      if (pageController.hasClients) {
+        pageController.animateToPage(
+          slidePageIndex.value,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeInOut,
+        );
+      }
     });
   }
 }

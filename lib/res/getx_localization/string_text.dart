@@ -41,4 +41,10 @@ class S {
   static String get quantity => 'quantity'.tr;
   static String get totalAmount => 'totalAmount'.tr;
   static String get description => 'description'.tr;
+
+  //sub homes ======
+
+  static String get stores => 'stores'.tr;
+  static String get mostPopularItems => 'mostPopularItems'.tr;
+  static String get bestReviewedItems => 'bestReviewedItems'.tr;
 }

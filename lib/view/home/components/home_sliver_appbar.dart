@@ -97,12 +97,14 @@ class HomeSliverAppbar extends StatelessWidget {
                 minHeight: 50.h,
                 maxHeight: 50.h,
                 child: Container(
-                  padding: screenPaddingH(),
+                  padding: edgeInsetsOnly(4, 4, 1, 0),
                   color: Colors.transparent,
                   child: customTextFormFild(
                     controller: inputController ?? TextEditingController(),
                     inputType: TextInputType.text,
-                    radiusSet: 6,
+                    borderColor: AppColors.whiteRed,
+                    fillColor: AppColors.white,
+                    radiusSet: 8,
                     hintText: '${S.searchForWhatYouWant}....',
                     isFilled: true,
                     isPrefixIcon: true,

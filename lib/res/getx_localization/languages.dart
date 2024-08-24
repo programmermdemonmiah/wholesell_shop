@@ -47,6 +47,11 @@ class Languages extends Translations {
           'totalAmount': 'Total Amount',
           'description': 'Description',
           'searchForWhatYouWant': 'Search for what you want',
+
+          //=====sub home ====
+          'stores': 'Stores',
+          'mostPopularItems': 'Most Popular Items',
+          'bestReviewedItems': 'Best reviewed Items',
         },
         'bn_BD': {
           'home': 'হোম',
@@ -92,6 +97,11 @@ class Languages extends Translations {
           'totalAmount': 'মোট পরিমাণ',
           'description': 'বর্ণনা',
           'searchForWhatYouWant': 'আপনি কি চান অনুসন্ধান করুন',
+
+          //sub homes ======
+          'stores': 'দোকান',
+          'mostPopularItems': 'সবচেয়ে জনপ্রিয় আইটেম',
+          'bestReviewedItems': 'সেরা পর্যালোচনা আইটেম',
         },
       };
 }

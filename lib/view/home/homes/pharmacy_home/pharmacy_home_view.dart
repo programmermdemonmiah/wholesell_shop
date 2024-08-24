@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wholesell_shop/utils/ui_const.dart';
 import 'package:wholesell_shop/view/home/components/home_slider.dart';
 import 'package:wholesell_shop/view/home/components/home_sliver_appbar.dart';
+import 'package:wholesell_shop/view/home/components/homes/custom_homes_category.dart';
+import 'package:wholesell_shop/view/home/homes/pharmacy_home/components/pharmacy_home_best_reviews_items.dart';
+import 'package:wholesell_shop/view/home/homes/pharmacy_home/components/pharmacy_home_most_popular_items.dart';
+import 'package:wholesell_shop/view/home/homes/pharmacy_home/components/pharmacy_home_store_section.dart';
 import 'package:wholesell_shop/view_model/controller/home/home_controller.dart';
 
 class PharmacyHomeView extends StatelessWidget {
@@ -24,9 +30,52 @@ class PharmacyHomeView extends StatelessWidget {
             child: ListView(
               children: [
                 HomeSlider(controller: mainHomeController),
-                Center(
-                    child:
-                        Text("${mainHomeController.homeName.value} HOme View")),
+                gapH(5),
+                SizedBox(
+                  height: 120.h,
+                  width: double.infinity,
+                  child: ListView.builder(
+                    itemCount: 4,
+                    shrinkWrap: true,
+                    primary: false,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      // final data = controller.categorisDataList[index];
+                      return CustomHomesCategory(
+                        padding: index == 0
+                            ? edgeInsetsOnly(4, 1, 0, 0)
+                            : edgeInsetsSym(1, 0),
+                        imageUrl:
+                            'https://shelfstock.ie/wp-content/uploads/2018/09/Pharmacy-CatMan.jpg',
+                        title: 'Category $index',
+                      );
+                    },
+                  ),
+                ),
+
+                //===========
+                //=====Most Popular Items ======
+                //=============
+                PharmacyHomeMostPopularItems(),
+
+                gapH(7),
+                //==============
+                //==============best Reviewes Items ============
+                //==================
+                PharmacyHomeBestReviewsItems(),
+
+                gapH(7),
+                //=========
+                //=======Stores===========
+                //=============
+                PharmacyHomeStoreSection(),
+
+                //==================
+                //=========================End=========
+                //==============
+                //end height navbar er jonne
+
+                gapH(30),
               ],
             ),
           ),

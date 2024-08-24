@@ -9,10 +9,10 @@ class PrefsController {
 
   //language Save =============
 
-  static set setLanguage(String value) {
+  static set setLanguage(String language) {
     try {
-      _prefarence.setString("language", value).then(
-            (value) => print("successfully add $value"),
+      _prefarence.setString("language", language).then(
+            (value) => print("successfully add $language"),
           );
     } catch (e) {
       print(e.toString());
